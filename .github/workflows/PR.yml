@@ -6,8 +6,8 @@ permissions:
   contents: read
 
 jobs:
-  MainBranchCI:
-    name: 'MainBranchCI'
+  PR:
+    name: 'PR'
     runs-on: ubuntu-latest
     defaults:
       run:
