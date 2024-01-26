@@ -1,0 +1,22 @@
+name: 'PR'
+
+on: pull_request
+
+permissions:
+  contents: read
+
+jobs:
+  MainBranchCI:
+    name: 'MainBranchCI'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install NodeJS Dependencies
+      run: git branch -a
+
