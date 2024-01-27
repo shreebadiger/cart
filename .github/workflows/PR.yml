@@ -9,7 +9,7 @@ jobs:
   PR:
     name: 'PR'
     runs-on:
-      group: Default
+      labels: self-hosted
 #    runs-on: ubuntu-latest
     defaults:
       run:
