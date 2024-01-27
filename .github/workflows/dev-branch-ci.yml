@@ -1,0 +1,26 @@
+name: 'Dev-Branch-CI'
+
+on:
+  push:
+    branches: [ "ROBO-*" ]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  DevBranchCI:
+    name: 'Dev-Branch-CI'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install nodejs dependencies
+      run: npm install
+
+    
