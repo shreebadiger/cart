@@ -6,6 +6,8 @@ permissions:
   contents: read
 
 jobs:
+  runs-on:
+      group: Default
   PR:
     name: 'PR'
     runs-on: ubuntu-latest
@@ -18,5 +20,17 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Install NodeJS Dependencies
-      run: git branch -a
+      run: npm install
+
+    - name: Run Code Quality
+      run: sonar-scanner -Dsonar.host.url=http://172.31.85.179:9000 -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=cart -Dsonar.qualitygate.wait=true -Dsonar.exclusions=node_modules/**
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+    - name: Run Test Cases
+      run: echo npm test
+
+    - name: Run Integration Cases
+      run: echo npm test
+
 
