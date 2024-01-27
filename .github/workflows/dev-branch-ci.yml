@@ -1,16 +1,15 @@
-name: 'Main-Branch-CI'
+name: 'Dev-Branch-ci'
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
+    branches: [ "ROBO-*" ]
 
 permissions:
   contents: read
 
 jobs:
-  MainBranchCI:
-    name: 'MainBranchCI'
+  DevBranchCI:
+    name: 'DevBranchCI'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -22,11 +21,6 @@ jobs:
 
     - name: Install nodejs dependencies
       run: git branch -a
-
-<<<<<<< HEAD
-###
-=======
-#
->>>>>>> main
-
+  
+#####
     
