@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   DevBranchCI:
-    name: 'CI'
+    name: 'DevBranchCI'
     runs-on: ubuntu-latest
     defaults:
       run:

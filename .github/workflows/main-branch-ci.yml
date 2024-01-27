@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   MainBranchCI:
-    name: 'CI'
+    name: 'MainBranchCI'
     runs-on: ubuntu-latest
     defaults:
       run:
