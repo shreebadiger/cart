@@ -6,8 +6,6 @@ permissions:
   contents: read
 
 jobs:
-  runs-on:
-      group: Default
   PR:
     name: 'PR'
     runs-on: ubuntu-latest
