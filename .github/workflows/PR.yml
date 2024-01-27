@@ -1,15 +1,13 @@
-name: 'Dev-Branch-ci'
+name: 'PR'
 
-on:
-  push:
-    branches: [ "ROBO-*" ]
+on: pull_request
 
 permissions:
   contents: read
 
 jobs:
-  DevBranchCI:
-    name: 'DevBranchCI'
+  MainBranchCI:
+    name: 'MainBranchCI'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -21,6 +19,7 @@ jobs:
 
     - name: Install nodejs dependencies
       run: git branch -a
-  
-#####
+
+#
+
     
