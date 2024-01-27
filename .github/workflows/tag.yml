@@ -25,12 +25,11 @@ jobs:
     - name: Install NodeJS Dependencies
       run: env
 
-#    - name: Create Archive
-#      run: |
-#        echo $TAG_NAME > VERSION
-#        zip -r $repo_name-$TAG_NAME.zip *
-#      env:
-#        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    - name: Create Archive
+      run: |
+        echo $GITHUB_REF_NAME > VERSION
+        echo zip -r cart-$GITHUB_REF_NAME.zip *
+
 #
 #    - name: Run Test Cases
 #      run: echo npm test
