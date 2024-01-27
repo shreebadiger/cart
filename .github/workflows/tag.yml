@@ -1,0 +1,41 @@
+name: 'ReleaseWithTag'
+
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: read
+
+jobs:
+  PR:
+    name: 'ReleaseWithTag'
+    runs-on:
+      labels: self-hosted
+#    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install NodeJS Dependencies
+      run: env
+
+#    - name: Create Archive
+#      run: |
+#        echo $TAG_NAME > VERSION
+#        zip -r $repo_name-$TAG_NAME.zip *
+#      env:
+#        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#
+#    - name: Run Test Cases
+#      run: echo npm test
+#
+#    - name: Run Integration Cases
+#      run: echo npm test
+
+
