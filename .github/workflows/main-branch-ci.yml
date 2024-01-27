@@ -1,0 +1,28 @@
+name: 'Main-Branch-CI'
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  MainBranchCI:
+    name: 'MainBranchCI'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install nodejs dependencies
+      run: git branch -a
+
+#
+
+    
